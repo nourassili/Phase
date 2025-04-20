@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phase Onboarding</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="onboarding.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #fff9f6;
+      padding: 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 1.5rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    input, select, button {
+      padding: 0.5rem;
+      width: 100%;
+      max-width: 100%;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      background-color: #7a5cf0;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    #result {
+      background: #f3f1ff;
+      padding: 1rem;
+      margin-top: 2rem;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<!-- Firebase App + Firestore -->
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+  
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT.appspot.com",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+  
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+  
+    window.db = db; // expose to onboarding.js
+  </script>
+  
+<body>
+  <h1>Let's get to know you</h1>
+  <form id="onboarding-form">
+    <div class="question">
+      <label for="birthYear">What year were you born?</label>
+      <select id="birthYear" required></select>
+    </div>
+
+    <div class="question">
+      <label for="startDate">When did your last period start?</label>
+      <input type="date" id="startDate" required />
+    </div>
+
+    <div class="question">
+      <label for="endDate">When did it end?</label>
+      <input type="date" id="endDate" required />
+    </div>
+
+    <div class="question">
+      <label for="goal">What are you most focused on right now?</label>
+      <select id="goal" required>
+        <option value="energy">Boosting energy + mood</option>
+        <option value="training">Smarter training</option>
+        <option value="recovery">Recovery + rest</option>
+        <option value="understanding">Understanding my body</option>
+        <option value="curious">Just curious</option>
+      </select>
+    </div>
+
+    <div class="question" id="menopauseQuestion" style="display: none;">
+      <label>Have you noticed changes in your cycle (length, symptoms, consistency)?</label>
+      <select id="menopauseExperience">
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+        <option value="not_sure">Not sure</option>
+      </select>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="result"></div>
+</body>
+</html>
