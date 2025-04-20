@@ -1,102 +1,148 @@
-body {
-    font-family: "Segoe UI", sans-serif;
+/* === Base Reset === */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
     margin: 0;
     padding: 0;
-    background: #fefcfb;
+    background: #fff9f6;
+    font-family: "Segoe UI", sans-serif;
     color: #333;
-    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
   
+  /* === Centering Wrapper === */
+  .content-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+  
+  /* === Main Content Container === */
+  .container {
+    max-width: 700px;
+    width: 100%;
+    text-align: left;
+  }
+  
+  /* === Header === */
   header {
     text-align: center;
-    padding: 2rem 1rem 1rem;
-    background-color: #fff;
+    margin-bottom: 1rem;
   }
   
-  h1 {
-    font-size: 2.5rem;
-    margin: 0;
+  header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
   }
   
   .tagline {
     font-style: italic;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #777;
   }
   
-  main {
-    padding: 2rem 1rem;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-  
-  .hero h2 {
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
-  }
-  
-  .cta-button {
-    display: inline-block;
-    background: #7a5cf0;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
-    margin-top: 1rem;
+  /* === Headline and Intro === */
+  main h2 {
+    font-size: 1.6rem;
     font-weight: bold;
+    margin-bottom: 0.75rem;
   }
   
-  .features,
-  .about,
-  .footer-cta {
-    margin-top: 3rem;
+  .intro {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
   }
   
-  ul {
-    list-style-type: none;
+  /* === Feature List === */
+  .features h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .features ul {
+    list-style: none;
     padding: 0;
+    margin: 0 0 1.5rem;
   }
   
-  ul li {
-    margin-bottom: 1rem;
-    padding-left: 1rem;
+  .features li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.2rem;
     position: relative;
   }
   
-  ul li::before {
+  .features li::before {
     content: "✓";
     position: absolute;
     left: 0;
     color: #7a5cf0;
+    font-weight: bold;
   }
   
-  footer {
-    text-align: center;
-    padding: 2rem 1rem;
-    font-size: 0.85rem;
-    background: #f9f9f9;
-    color: #666;
+  /* === Science Section === */
+  .science h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
   }
   
+  .science p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* === Email Signup Form === */
   form {
-    margin-top: 2rem;
     display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
+    margin-bottom: 1rem;
   }
   
   input[type="email"] {
     padding: 0.5rem;
     flex: 1;
+    min-width: 220px;
     border: 1px solid #ccc;
     border-radius: 6px;
+    font-size: 0.95rem;
   }
   
   button {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.25rem;
     background-color: #7a5cf0;
     color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #684de0;
+  }
+  
+  /* === CTA & Footer === */
+  .footer-cta {
+    font-weight: 500;
+    font-size: 1rem;
+    color: #444;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem 1rem 2rem;
+    font-size: 0.85rem;
+    background: #fdfaf9;
+    color: #666;
   }
   
