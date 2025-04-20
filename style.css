@@ -1,0 +1,25 @@
+body {
+    font-family: sans-serif;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #fefefe;
+  }
+  
+  #chat-form {
+    display: flex;
+    margin-top: 1rem;
+  }
+  
+  #user-input {
+    flex: 1;
+    padding: 0.5rem;
+  }
+  
+  #chat-log {
+    margin-top: 1rem;
+    background: #f3f3f3;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
